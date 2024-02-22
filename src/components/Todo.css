@@ -11,10 +11,11 @@
   }
   
   .app {
-    position: absolute;
+    /* position: absolute;
     top: 10%;
     left: 50%;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, -10%); */
+    height: 100vh;
   }
   
   .app .mainHeading h1 {
@@ -28,6 +29,7 @@
   }
   
   .app .input {
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,5 +96,8 @@
     margin-top: 30px;
   }
   .app{
-    /* background-image: url('../assets/free-images.jpg'); */
+    background-image:  linear-gradient(45deg,
+    rgba(245, 70, 66, 0.75),
+    rgba(8, 83, 156, 0.75)), url('../assets/notes.jpg');
+    background-size: cover;
   }

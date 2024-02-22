@@ -1,7 +1,6 @@
 import './Todo.css'
 import { useState } from 'react';
 import DateObject from "react-date-object";
-import image from "../assets/free-images.jpg"
 
 function Todo() {
     const [toDos, setToDos] = useState([])
@@ -24,7 +23,7 @@ console.log(date.format());
             <div className="input">
                 <input value={toDo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." 
                 />
-                <i onClick={() => setToDos([...toDos, { id: Date.now(), text: toDo.required, status: false }])} className="fas fa-plus"></i>
+                <i onClick={addTask} className="fas fa-plus"></i>
             </div>
 
 
@@ -61,14 +60,18 @@ console.log(date.format());
                 { }
             </div>
 
-            <div className='margin'>
-                <input type="text" placeholder='Sample Input'/>
-            </div>
-            <div className='margin'>
-                <img src={image} alt="" width="100px" height="100px"/>
-            </div>
+
         </div>
     );
+
+    function addTask(){
+        if(toDo===''){
+            alert("Please Enter Some Text")
+        }
+        else{
+            setToDos([...toDos, { id: Date.now(), text: toDo, status: false }])
+        }
+    }
 }
 
 export default Todo
